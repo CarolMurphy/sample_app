@@ -50,7 +50,7 @@ describe "Authentication" do
   				click_button "Sign in"
   			end
   			
-  			describe "after signin in" do
+  			describe "after signing in" do
   				
   				it "should render the desired protected page" do
   					expect(page).to have_title('Edit user')
@@ -61,20 +61,20 @@ describe "Authentication" do
   		describe "in the Users controller" do
   			
   			describe "visiting the edit page" do
-  				before { visit edit_user_path(user) }
-  				it { should have_title('Sign in') }
-  			end
+  		    before { visit edit_user_path(user) }
+  		    it { should have_title('Sign in') }
+  		  end
   			
   			describe "submitting to the update action" do
-  				before { patch user_path(user) }
-  				specify { expect(response).to redirect_to(signin_path) }
-  			end
+  		    before { patch user_path(user) }
+  		    specify { expect(response).to redirect_to(signin_path) }
+  		  end
   			
-  			describe "visiting the user index" do
-  				before { visit users_path }
-  				it { should have_title('Sign in') }
-  			end  			
-  		end
+  	    describe "visiting the user index" do
+  		    before { visit users_path }
+  		    it { should have_title('Sign in') }
+  		  end  			
+  	  end	
   	end
   	
   	describe "as wrong user" do
